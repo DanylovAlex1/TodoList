@@ -18,7 +18,7 @@ class BoardListAPIView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, ]
 
     def get_queryset(self):
-        queryset = Board.objects.annotate(count=Count('todo__board'))
+        queryset = Board.objects.annotate(count=Count('todolist__board'))
         return queryset
 
 

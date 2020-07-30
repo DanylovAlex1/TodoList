@@ -11,10 +11,12 @@ class BoardListAPIViewSerializer(serializers.Serializer):
 class BoardCreateAPIViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Board
-        fields = ['title', ]
+        fields='__all__'
+        # fields = ['title', ]
 
 
 class TodoListAPIViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = TodoList
-        fields = ['title', 'done']
+        fields = '__all__'
+        #fields = ['title', 'done']
